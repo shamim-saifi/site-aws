@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-color: 252, 152, 0; /* #fc9800 */
+    --secondary-color: 19, 174, 238; /* #13aeee */
+    --neutral-color: 0, 0, 0; /* #000000 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    letter-spacing: 0.04em;
+    word-wrap: break-word;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-transparent-pre {
+    font-size: 70px;
+    -webkit-text-stroke: 2px #27334B;
+    color: transparent;
+  }
+
+  .scrollbarak::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .scrollbarak::-webkit-scrollbar-track {
+    background-color: rgb(var(--primary-color));
+    border-radius: 10px;
+  }
+
+  .scrollbarak::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--secondary-color));
+    border-radius: 10px;
+    border: 3px solid rgb(var(--primary-color));
+  }
+}

@@ -1,0 +1,11 @@
+/* 👇 Add this CSS animation (in your global.css or tailwind.css) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
