@@ -104,7 +104,7 @@ const Hero = () => {
 
         <div className="text-white space-y-5 flex flex-col justify-center">
           <p className="text-blue-200 font-medium flex items-center gap-2">
-            <FaPhoneAlt className="text-blue-300" /> Call us: shamim saifi
+            <FaPhoneAlt className="text-blue-300" /> Call us: shamim saifi 5
           </p>
 
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
