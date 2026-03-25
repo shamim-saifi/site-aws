@@ -1,4 +1,4 @@
-name: Deploy React to S3 and CloudFront
+name: Deploy React to S3
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -21,9 +21,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build React App
+      - name: Build App
         run: npm run build
-        working-directory: site
 
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
@@ -33,11 +32,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Upload to S3
-        run: |
-          aws s3 sync site/dist s3://${{ secrets.S3_BUCKET }} --delete
+        run: aws s3 sync dist s3://${{ secrets.S3_BUCKET }} --delete
 
-      - name: Invalidate CloudFront
-        run: |
-          aws cloudfront create-invalidation \
+      - name: CloudFront Invalidation
+        run: aws cloudfront create-invalidation \
           --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
           --paths "/*"
