@@ -16,11 +16,10 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
       - name: Install Dependencies
         run: npm install
-        working-directory: site
 
       - name: Build React App
         run: npm run build
